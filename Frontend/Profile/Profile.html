@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - CarHub</title>
+    <link rel="stylesheet" href="./Profile.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navcontainer">
+            <nav class="nav1">
+                <a href="#" class="logo">CarHub</a>
+                <div class="nav-links">
+                    <a href="../Home/home.html">Home</a>
+                    <a href="../Car/car.html">Cars</a>
+                    <a href="../Rental/rental.html">Rental</a>
+                    <a class="profileNav" href="../User/user.html">User</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="/api/placeholder/180/180" alt="Profile Picture" class="profile-pic">
+            <!-- <button class="edit-button">Edit Profile</button> -->
+            <button onclick="logout()" class="edit-button">Logout</button>
+        </div>
+        
+        <div class="profile-content">
+            <h1 class="profile-name">John Doe</h1>
+            <div class="profile-username">@johndoe</div>
+            
+            <div class="profile-info">
+                <div class="info-group">
+                    <div class="info-label">Username</div>
+                    <div class="info-value username">johndoe</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Full Name</div>
+                    <div class="info-value name">John Doe</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Phone Number</div>
+                    <div class="info-value phone">+1 234 567 8900</div>
+                </div>
+                <div class="info-group">
+                    <div class="info-label">Member Since</div>
+                    <div class="info-value date">January 2024</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js" integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./Profile.js" ></script>
+</html>

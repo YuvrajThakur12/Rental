@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Admin</title>
+    <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Car Rental Management</h1>
+        <button class="add-btn">+ Add New Car</button>
+        <a href="/Frontend/Car/car.html">car</a>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search cars...">
+    </div>
+
+    <h1>CARS</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Color</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="carTable">
+                <!-- byJS -->
+            </tbody>
+        </table>
+    </div>
+
+    <h1>RENTS</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Car Brand</th>
+                    <th>Car Model</th>
+                    <th>User Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Price</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="rentTable">
+                <!-- byJS -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="cards-container">
+        <div class="card">
+            <img src="/api/placeholder/300/200" alt="Car" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Toyota Camry</h3>
+                <div class="card-details">
+                    <p class="card-detail"><strong>Model:</strong> SE</p>
+                    <p class="card-detail"><strong>Year:</strong> 2024</p>
+                    <p class="card-detail"><strong>Color:</strong> Silver</p>
+                    <p class="card-detail"><strong>Price:</strong> $45,000</p>
+                </div>
+                <div class="card-actions">
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/api/placeholder/300/200" alt="Car" class="card-image">
+            <div class="card-content">
+                <h3 class="card-title">Honda Accord</h3>
+                <div class="card-details">
+                    <p class="card-detail"><strong>Model:</strong> Sport</p>
+                    <p class="card-detail"><strong>Year:</strong> 2023</p>
+                    <p class="card-detail"><strong>Color:</strong> Black</p>
+                    <p class="card-detail"><strong>Price:</strong> $42,000</p>
+                </div>
+                <div class="card-actions">
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add Car Modal -->
+    <div class="modal" id="addModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add New Car</h2>
+                <button class="close-btn" onclick="closeModal('addModal')">&times;</button>
+            </div>
+            <form id="addCarForm">
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-input" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Model</label>
+                    <input type="text" class="form-input" name="model" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Year</label>
+                    <input type="number" class="form-input" name="year" required min="1900" max="2025">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Color</label>
+                    <input type="text" class="form-input" name="color" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Price</label>
+                    <input type="number" class="form-input" name="price" required min="0">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Image</label>
+                    <div class="file-input-container">
+                        <label class="file-input-label">
+                            Choose Image
+                            <input type="file" class="file-input" name="pic" accept="image/*">
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="form-submit">Add Car</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Car Modal -->
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Edit Car</h2>
+                <button class="close-btn" onclick="closeModal('editModal')">&times;</button>
+            </div>
+            <form id="editCarForm">
+                <input type="hidden" name="id">
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-input" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Model</label>
+                    <input type="text" class="form-input" name="model" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Year</label>
+                    <input type="number" class="form-input" name="year" required min="1900" max="2025">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Color</label>
+                    <input type="text" class="form-input" name="color" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Price</label>
+                    <input type="number" class="form-input" name="price" required min="0">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Image</label>
+                    <div class="file-input-container">
+                        <label class="file-input-label">
+                            Choose New Image
+                            <input type="file" class="file-input" name="pic" accept="image/*">
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="form-submit">Update Car</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js" integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./admin.js" ></script>
+</html>

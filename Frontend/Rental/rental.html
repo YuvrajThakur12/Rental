@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Admin</title>
+    <link rel="stylesheet" href="rental.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navcontainer">
+            <nav class="nav1">
+                <a href="#" class="logo">CarHub</a>
+            
+                <div class="nav-links">
+                    <a href="../Home/home.html">Home</a>
+                    <a href="../Car/car.html">Cars</a>
+                    <a href="../Rental/rental.html">Rental</a>
+                    <a class="profileNav" href="../User/user.html">User</a>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <header>
+            <h1>Rent Admin</h1>
+            <p>Welcome to the Rent Admin Page! Here you can manage all user data.</p>
+        </header>
+
+        <div>
+            <h2>Rent List</h2>
+           <table>
+            <thead>
+                <tr>
+                    <th>Car Brand</th>
+                    <th>Car Model</th>
+                    <th>User Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Price</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="RentTable" >
+                <!-- By Js -->
+
+            </tbody>
+           </table>
+        </div>
+         
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="rental.js"></script>
+</body>
+</html>

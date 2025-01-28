@@ -1,0 +1,238 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Modern font for a clean look */
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, #f0f4f8, #d9e6f2);
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Header */
+.header {
+    width: 100%; /* Full width */
+    background-color: #2b3d63; /* Dark navy background */
+    color: #ffffff; 
+    padding: 10px 0;
+}
+
+/* Navigation container */
+.navcontainer {
+    max-width: 1300px;
+    height: 50px; /* Centralize and limit max width */
+    margin: 0 auto; /* Center content horizontally */
+    padding: 0 20px; /* Add side padding */
+}
+
+/* Navigation bar styles */
+.nav1 {
+    display: flex;
+    justify-content: space-between; /* Spread content */
+    align-items: center; 
+    margin-top: 10px;
+    padding: 0 20px;
+    background-color: #2b3d63;/* Vertically center items */
+}
+
+/* Logo styles */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffba08; /* Highlight logo with a different color */
+}
+
+/* Navigation links */
+.nav-links a {
+    text-decoration: none;
+    color: white; /* White text */
+    margin-left: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+    color: #ffba08; /* Golden yellow */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav1 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Account Section */
+#AccountSection {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    overflow: hidden;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(135deg, #ff6f61, #ff8a65);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff8a65, #ff6f61);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#AccountSection section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#AccountSection button {
+    margin: 15px 10px;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+form label {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+form input {
+    padding: 12px;
+    border: 2px solid #d9e6f2;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #1a2b48;
+    outline: none;
+    box-shadow: 0 0 8px rgba(26, 43, 72, 0.2);
+}
+
+.file-input-label {
+    display: inline-block;
+    background-color: #1a2b48;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.file-input {
+    display: none;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.footer-text a {
+    color: #1a2b48;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-text a:hover {
+    color: #ff6f61;
+}
+
+/* User Card */
+#UserCard {
+    display: none; /* Hidden by default until user signs in */
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#UserCard img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #1a2b48;
+    margin-bottom: 15px;
+}
+
+#UserCard h2 {
+    font-size: 1.5rem;
+    color: #1a2b48;
+    margin-bottom: 10px;
+}
+
+#UserCard p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#UserCard button {
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #AccountSection {
+        width: 90%;
+    }
+
+    .navcontainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
