@@ -215,7 +215,25 @@ body {
     top: 110px;
     right: 12px;
 }
+.adminBtn {
+    text-align: center;
+    margin: 20px 0;
+}
 
+.adminBtn button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.adminBtn button:hover {
+    background-color: #34495e;
+}
 .none
 {
     display: none;

@@ -4,9 +4,7 @@ const profileNav = document.querySelector('.profileNav');
 
 window.onload = () => {
     if (!localStorage.token) {
-        document.body.innerHTML = `<div class="error-message">sign in to you rental cars</div>
-                                    <a href = '/frontend/user/user.html'>sign in</a>`
-        return;
+        window.location.href = "/Frontend/User/user.html";
     }
 
     profileNav.innerHTML = `Profile`
@@ -45,25 +43,31 @@ function display(rentals) {
                 <td>${rental.start_date}</td>
                 <td>${rental.end_date}</td>
                 <td>$${rental.car.price}</td>
-                <td><button onclick="updateRental(${rental.id})">Update</button></td>
-                <td><button onclick="deleteRental(${rental.id})">Delete</button></td>
+                <td><button id="updateRental(${rental.id})">Update</button></td>
+                <td><button dataId="${data.id}" class="delete-btn">Delete</button></td>
             </tr>`;
     });
+    let deleteButtons = document.querySelectorAll('.delete-btn');
+    console.log(deleteButtons)
+
+    deleteButtons.forEach((button) => {
+        button.addEventListener('click',(e) =>{
+            delete(e)
+        });
+    });
+
 }
 
-async function deleteRental(id) {
-    try {
-        const token = localStorage.getItem("token");
-        await axios.delete(`${url}rent/${id}/`, {
-            headers: {
-                "Authorization": `Token ${token}`
-            }
-        });
-        alert("Rental deleted successfully!");
-        getData(); // Refresh the data
-    } catch (error) {
-        console.error("Error deleting rental:", error);
-    }
+async function delet(e) {
+    let id = e.target.getAttribute('dataId');
+    let token = localStorage.getItem('token');
+    let res = await axios.delete(`${url}rent/${id}`, {
+        headers: {
+            'Authorization': `Token ${token}`
+        }
+    });
+    console.log(res.data);
+    getData();
 }
 
 // Fetch and display data on page load

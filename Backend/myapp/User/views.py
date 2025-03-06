@@ -54,8 +54,7 @@ class login (APIView):
         
 class getUser(APIView):
     permission_classes = [IsAuthenticated]
-
     def get(self, request):
-        profile = request.user
-        serializer = userSerializer(profile)
+        user = request.user
+        serializer = userSerializer(user)
         return Response(serializer.data)
